@@ -19,6 +19,8 @@ public class Puntaje extends AppCompatActivity {
         String puntajes[] = new String[]{"primero: "+pref.getInt("puntaje1",0)
                 ,"segundo: "+pref.getInt("puntaje2",0),"tercero: "+pref.getInt("puntaje3",0)};
 
+        lstPuntaje = findViewById(R.id.lstPuntaje);
+
         lstPuntaje.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,puntajes));
     }
 }

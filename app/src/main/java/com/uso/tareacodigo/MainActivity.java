@@ -19,17 +19,21 @@ public class MainActivity extends AppCompatActivity {
         btnConfig = findViewById(R.id.btnConfig);
         btnPuntaje = findViewById(R.id.btnPuntaje);
 
+
         SharedPreferences shared = this.getSharedPreferences("datos", Context.MODE_PRIVATE);
-        shared.edit().putString("nick","jugador").apply();
-        shared.edit().putInt("puntaje1",0).apply();
-        shared.edit().putInt("puntaje2",0).apply();
-        shared.edit().putInt("puntaje3",0).apply();
-        shared.edit().putInt("dificultad",0).apply();
+        if(shared.getBoolean("primero",true)) {
+            shared.edit().putBoolean("primero", false).apply();
+            shared.edit().putString("nick", "jugador").apply();
+            shared.edit().putInt("puntaje1", 999).apply();
+            shared.edit().putInt("puntaje2", 999).apply();
+            shared.edit().putInt("puntaje3", 999).apply();
+            shared.edit().putInt("dificultad", 0).apply();
+        }
 
         btnIniciarJuego.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(MainActivity.this,Juego.class));
             }
         });
 
