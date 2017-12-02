@@ -1,6 +1,8 @@
 package com.uso.tareacodigo;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +19,13 @@ public class MainActivity extends AppCompatActivity {
         btnConfig = findViewById(R.id.btnConfig);
         btnPuntaje = findViewById(R.id.btnPuntaje);
 
+        SharedPreferences shared = this.getSharedPreferences("datos", Context.MODE_PRIVATE);
+        shared.edit().putString("nick","jugador").apply();
+        shared.edit().putInt("puntaje1",0).apply();
+        shared.edit().putInt("puntaje2",0).apply();
+        shared.edit().putInt("puntaje3",0).apply();
+        shared.edit().putInt("dificultad",0).apply();
+
         btnIniciarJuego.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -27,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         btnPuntaje.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(MainActivity.this,Puntaje.class));
             }
         });
 
