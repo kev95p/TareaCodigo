@@ -16,5 +16,25 @@
         android:layout_marginLeft="17dp"
         android:layout_marginStart="17dp"
         android:layout_marginTop="14dp"
-        android:text="Iniciar eu" />
+        android:text="Iniciar Juego" />
+
+    <Button
+        android:id="@+id/btnPuntaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnIniciarJuego"
+        android:layout_alignStart="@+id/btnIniciarJuego"
+        android:layout_below="@+id/btnIniciarJuego"
+        android:layout_marginTop="39dp"
+        android:text="Puntaje Alto" />
+
+    <Button
+        android:id="@+id/btnConfig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnPuntaje"
+        android:layout_alignStart="@+id/btnPuntaje"
+        android:layout_below="@+id/btnPuntaje"
+        android:layout_marginTop="41dp"
+        android:text="Configuracion" />
 </RelativeLayout>
